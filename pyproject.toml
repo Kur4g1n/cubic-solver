@@ -1,0 +1,49 @@
+[project]
+name = "cubic-solver"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Artem Kargopolov",email = "a.kargopolov@vk.team"}
+]
+readme = "README.md"
+requires-python = "^3.13"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+flake8 = "^7.1.1"
+flake8-pyproject = "^1.2.3"
+pyright = "^1.1.393"
+isort = "^6.0.0"
+pytest = "^8.3.4"
+pylint = "^3.3.4"
+pytest-coverage = "^0.0"
+
+[tool.black]
+line-length = 100
+
+[tool.flake8]
+max-line-length = 100
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+omit = [
+    "*/__main__.py",
+    "*/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "__repr__",
+    "__str__",
+]
+fail_under = 85
+precision = 2
+show_missing = true
