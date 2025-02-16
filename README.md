@@ -40,8 +40,13 @@ A Python package for solving polynomial equations up to 3rd degree with real roo
    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
    source ~/.bashrc
    ```
+5. Ensure make is installed:
 
-5. **Clone the repository and install dependencies**:
+   ```bash
+   sudo apt install make
+   ```
+
+6. **Clone the repository and install dependencies**:
 
    ```bash
    git clone https://github.com/kur4g1n/equation-solver.git
