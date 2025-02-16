@@ -31,7 +31,7 @@ A Python package for solving polynomial equations up to 3rd degree with real roo
 4. **Install Poetry** for Python 3.13:
 
    ```bash
-   curl -sSL https://install.python-poetry.org | python3.13 -
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
 
    Ensure Poetry is in your PATH:
