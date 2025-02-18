@@ -1,5 +1,7 @@
 import pytest
 
+from cubic_solver import main_logger
+
 
 @pytest.mark.parametrize(
     "a, b, c, d, has_roots, expected_str",
@@ -9,6 +11,7 @@ import pytest
     ],
 )
 def test_identity(get_solution, a, b, c, d, has_roots, expected_str):
+    main_logger.debug(f"Testing {d} = 0: {expected_str}")
     solution = get_solution(a, b, c, d)
     assert solution.has_roots is has_roots
     assert str(solution) == expected_str
@@ -22,6 +25,7 @@ def test_identity(get_solution, a, b, c, d, has_roots, expected_str):
     ],
 )
 def test_linear(get_solution, a, b, c, d, expected_roots):
+    main_logger.debug(f"Testing {c}*x + {d} = 0: {expected_roots}")
     solution = get_solution(a, b, c, d)
     assert solution.roots == expected_roots
 
@@ -36,6 +40,7 @@ def test_linear(get_solution, a, b, c, d, expected_roots):
     ],
 )
 def test_quadratic(get_solution, a, b, c, d, expected_roots):
+    main_logger.debug(f"Testing {b}*x^2 + {c}*x + {d} = 0: {expected_roots}")
     solution = get_solution(a, b, c, d)
     assert solution.roots == expected_roots
 
@@ -51,5 +56,6 @@ def test_quadratic(get_solution, a, b, c, d, expected_roots):
     ],
 )
 def test_cubic(get_solution, a, b, c, d, expected_roots):
+    main_logger.debug(f"Testing {a}*x^3 + {b}*x^2 + {c}*x + {d} = 0: {expected_roots}")
     solution = get_solution(a, b, c, d)
     assert solution.roots == expected_roots

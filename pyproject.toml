@@ -25,6 +25,11 @@ pytest = "^8.3.4"
 pylint = "^3.3.4"
 pytest-coverage = "^0.0"
 
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
+log_cli_format = "%(message)s"
+
 [tool.black]
 line-length = 100
 
