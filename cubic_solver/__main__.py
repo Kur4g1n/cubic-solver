@@ -1,10 +1,10 @@
-import argparse
+from cubic_solver.parser import SolverArguementParser
 
 from .factory import SolverFactory
 
 
 def main():
-    parser = argparse.ArgumentParser(
+    parser = SolverArguementParser(
         description="Solves polynomial equations up to the third degree."
     )
     parser.add_argument("a", type=float, help="Coefficient of x^3")
