@@ -11,10 +11,13 @@ TEST_DIR := tests
 .DEFAULT_GOAL := help
 
 # Targets
-.PHONY: help install install-dev run test lint format clean check-env
+.PHONY: help doc install install-dev run test lint format clean check-env
 
 help:  ## Display this help message
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n\nTargets:\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
+
+doc:  ## Display cli documentation
+	$(PYTHON) -m $(PACKAGE_NAME) --help
 
 check-env:  ## Verify environment setup
 	@which poetry >/dev/null || (echo "Poetry not installed. See https://python-poetry.org/docs/"; exit 1)
