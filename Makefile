@@ -29,7 +29,7 @@ run:  ## Run solver with coefficients (A B C D, default: 0 0 0 0) and number of 
 	$(PYTHON) -m $(PACKAGE_NAME) $(or $(A),0) $(or $(B),0) $(or $(C),0) $(or $(D),0) --n_digits=$(or $(N_DIGITS), 10) --display_digits=$(or $(DISPLAY_DIGITS), 4)
 
 test:  ## Run tests
-	$(POETRY) run pytest -v $(TEST_DIR) --cov=$(SRC_DIR)
+	$(POETRY) run pytest -v -s $(TEST_DIR) --cov=$(SRC_DIR)
 
 lint:  ## Run static code analysis
 	$(POETRY) run flake8 $(SRC_DIR) $(TEST_DIR)
