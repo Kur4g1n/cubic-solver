@@ -125,7 +125,7 @@ make install-dev
 2. Run tests:
 
 ```bash
-make tests
+make test
 ```
 
 3. List of make commands:
